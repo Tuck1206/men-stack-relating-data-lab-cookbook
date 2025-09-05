@@ -1,0 +1,18 @@
+<!-- applications/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../partials/_navbar.ejs') %>
+    <title>Your Recipes</title>
+  </head>
+  <body>
+    <h1>Your Recipes</h1>
+  <a href="/users/<%= user._id %>/foods/<%= food._id %>">
+     <ul>
+      <% foods.forEach((food)=>{ %>
+      <li><%= food.title %> at <%= food.ingredents %></li>
+  </body>
+</html>
