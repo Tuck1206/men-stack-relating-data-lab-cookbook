@@ -8,10 +8,13 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1><%= food.title %></h1>
-    <h1>Ingredents Are: <%= food.ingredents %></h1>
+    <h1>Ingredients Are: <%= food.ingredients %></h1>
     <% if (food.notes) { %>
-    <p>Notes: <%= application.notes %></p>
+    <p>Notes: <%= food.notes %></p>
     <% } %> 
+    <a href="/users/<%= user._id %>/foods/<%= food._id %>/edit">
+      Edit This Recipe
+    </a>
      <form
       action="/users/<%= user._id %>/foods/<%= food._id %>?_method=DELETE"
       method="POST"

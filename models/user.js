@@ -7,7 +7,7 @@ const foodSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  ingredents: {
+  ingredients: {
     type: String,
     required: true,
   },
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  pantry: [foodSchema]
+  foods: [foodSchema]
 })
 
 const User = mongoose.model('User', userSchema)

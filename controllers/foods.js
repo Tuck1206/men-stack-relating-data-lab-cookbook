@@ -6,7 +6,8 @@ const User = require('../models/user.js')
 router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id)
-    res.render('foods/home.ejs', {
+    console.log(currentUser)
+    res.render('foods/recipes.ejs', {
       foods: currentUser.foods,
     })
   } catch (error) {
@@ -33,9 +34,18 @@ router.get('/:foodId', async (req, res) => {
 })
 
 
-
-
-
+router.get('/:foodId/edit', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id)
+    const food = currentUser.foods.id(req.params.foodId)
+    res.render('foods/edit.ejs', {
+      food: food,
+    })
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+})
 
 router.post('/', async (req, res) => {
   try {
@@ -48,6 +58,37 @@ router.post('/', async (req, res) => {
     res.redirect('/')
   }
 })
+
+
+router.put('/:foodId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id)
+    const food = currentUser.foods.id(req.params.foodId)
+    food.set(req.body)
+    await currentUser.save()
+    res.redirect(
+      `/users/${currentUser._id}/foods/${req.params.foodId}`
+    )
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+})
+
+
+
+router.delete('/:foodId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id)
+    currentUser.foods.id(req.params.foodId).deleteOne()
+    await currentUser.save()
+    res.redirect(`/users/${currentUser._id}/foods`)
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+})
+
 
 
 
