@@ -1,5 +1,3 @@
-<!-- applications/index.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,20 +5,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%- include('../partials/_navbar.ejs') %>
-        <title>Your Recipes</title>
+        <title>Your Foods</title>
 </head>
 
 <body>
-    <h1>Your Recipes</h1>
+    <h1>Your Foods</h1>
     <ul>
         <% foods.forEach((food)=>{ %>
-            <li>
-                <a href="/users/<%= user._id %>/foods/<%= food._id %>">
-                    <%= food.title %>
-                </a>
-            </li>
-        <% }) %>
+            <% if (currentUser.equals(user)){ %>
+
+                <li>
+                    <a href="/users/<%= user._id %>/foods/<%= food._id %>">
+                        <%= food.title %>
+                    </a>
+                </li>
+
+                <% } else { %>
+                    <li>
+
+                        <%= food.title %>
+
+                    </li>
+                    <% } %>
+                        <% }) %>
     </ul>
+    <% if (currentUser.equals(user)){ %>
+        <a href="/users/<%=user._id%>/foods/newrecipe">Add New Food</a>
+        <% } %>
 </body>
 
 </html>
