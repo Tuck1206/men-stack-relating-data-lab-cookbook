@@ -4,31 +4,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
     <%- include('../partials/_navbar.ejs') %>
-        <title>Your Foods</title>
+        <title>Your Items</title>
 </head>
 
 <body>
-    <h1>Your Foods</h1>
+    <h1>Your Items</h1>
+    <h2>
     <ul>
         <% foods.forEach((food)=>{ %>
             <% if (currentUser.equals(user)){ %>
 
-                <li>
-                    <a href="/users/<%= user._id %>/foods/<%= food._id %>">
-                        <%= food.title %>
+                <ol>
+                    <br><a href="/users/<%= user._id %>/foods/<%= food._id %>">
+                      <%= food.title %>
                     </a>
-                </li>
+                </ol>
 
                 <% } else { %>
-                    <li>
+                    <ol>
 
                         <%= food.title %>
 
-                    </li>
+                    </ol>
                     <% } %>
                         <% }) %>
     </ul>
+    </h2>
     <% if (currentUser.equals(user)){ %>
         <a href="/users/<%=user._id%>/foods/newrecipe">Add New Food</a>
         <% } %>

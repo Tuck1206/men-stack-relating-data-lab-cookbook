@@ -3,19 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add New Food</title>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <title>Add New Item</title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Add New Foods</h1>
+    <h1>Add New Items</h1>
 
 <form action="/users/<%= user._id %>/foods" method="post">
 
-  <label for="title">Food:</label>
+  <label for="title">Item:</label>
   <input type="text" name="title" id="title" />
 
 
-   <button type="submit">Add Food</button>
+   <button type="submit">Add Item</button>
 </form>
   </body>
 </html>

@@ -1,10 +1,60 @@
 body {
-    background-color: blueviolet;
+    background-image: url(https://au-assets.s3-us-west-2.amazonaws.com/assets/campaigns/2020/Q3/09-29+How+to+Create+a+Cookbook+Blog/Cookbook-06-Format-01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:cursive;
+    padding: 10px;
+    text-align: center;
 }
 a {
     color: black;
-    display:inline
-   
+    display:inline;
+    padding: 100px;
+}
 
+.navbar {
+  background-color: #333;
+  padding: 3px 0px;
+}
 
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+}
+
+.nav-list ol {
+  margin: 20px, 20px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: #00bcd4;
+}
+
+a:link, a:visited {
+background-color: #f44336;
+color: white;
+padding: 5px 30px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+a:hover, a:active {
+background-color: red;
+}
+
+ol{
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style:italic;
+    font:bolder;
+    color: orangered;
 }

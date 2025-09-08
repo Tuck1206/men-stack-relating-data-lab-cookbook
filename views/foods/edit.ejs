@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
   <title>Editing <%= food.title %></title>
 </head>
 <body>
@@ -12,10 +13,10 @@
    action="/users/<%= user._id %>/foods/<%= food._id %>?_method=PUT"
   method="POST"
   >
-     <label for="title">Title:</label>
+     <label for="title">Name:</label>
     <input type="text" name="title" id="title" value="<%= food.title %>">
     >
-    <button type="submit">Update Application</button>
+    <button type="submit">Update</button>
   </form>
 </body>
 </html>

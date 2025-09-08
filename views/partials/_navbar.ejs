@@ -1,11 +1,13 @@
-<nav>
-  <a href="/">Home</a>
+<nav class="navbar">
+  <ul class="nav-list">
+  <ol><a href="/">Home</a></ol>
   <% if(user) { %>
-  <a href="/users/<%=user._id%>/foods">View my Pantry</a>
-  <a href="/users">Explore Community</a>
-  <a href="/auth/sign-out">Sign Out</a>
+  <ol><a href="/users/<%=user._id%>/foods">View my Pantry</a></ol>
+  <ol><a href="/users">Explore Community</a></ol>
+  <ol><a href="/auth/sign-out">Sign Out</a></ol>
   <% } else { %>
-  <a href="/auth/sign-in">Sign In</a>
-  <a href="/auth/sign-up">Sign Up</a>
+  <ol><a href="/auth/sign-in">Sign In</a></ol>
+  <ol><a href="/auth/sign-up">Sign Up</a></ol>
   <% } %>
+  </ul>
 </nav>

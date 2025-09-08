@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
     <title><%= food.title %></title>
   </head>
   <body>
@@ -10,13 +11,13 @@
     <h1><%= food.title %></h1>
 
     <a href="/users/<%= user._id %>/foods/<%= food._id %>/edit">
-      Edit This Food
+      Edit This Item
     </a>
      <form
       action="/users/<%= user._id %>/foods/<%= food._id %>?_method=DELETE"
       method="POST"
     >
-      <button type="submit">Delete This Food</button>
+      <br><button type="submit">Delete This Item</button>
     </form>
   </body>
 </html>
